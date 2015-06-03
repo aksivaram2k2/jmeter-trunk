@@ -1,0 +1,247 @@
+<?xml version="1.0"?> 
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+       http://www.apache.org/licenses/LICENSE-2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<document>   
+<properties>     
+    <author email="dev AT jmeter.apache.org">JMeter developers</author>     
+    <title>Changes</title>   
+</properties> 
+<body> 
+<section name="Changes"> 
+<style type="text/css"><!--
+h2 { color: #960000; }
+h3 { color: #960000; }
+--></style>
+<note>
+<b>This page details the changes made in the current version only.</b>
+<br></br>
+Earlier changes are detailed in the <a href="changes_history.html">History of Previous Changes</a>.
+</note>
+
+
+<!--  =================== 2.14 =================== -->
+
+<h1>Version 2.14</h1>
+
+Summary
+<ul>
+<li><a href="#New and Noteworthy">New and Noteworthy</a></li>
+<li><a href="#Known bugs">Known bugs</a></li>
+<li><a href="#Incompatible changes">Incompatible changes</a></li>
+<li><a href="#Bug fixes">Bug fixes</a></li>
+<li><a href="#Improvements">Improvements</a></li>
+<li><a href="#Non-functional changes">Non-functional changes</a></li>
+<li><a href="#Thanks">Thanks</a></li>
+
+</ul>
+
+<ch_section>New and Noteworthy</ch_section>
+
+<!-- <ch_category>Improvements</ch_category> -->
+<!-- <ch_title>Sample title</ch_title>
+<p>
+<ul>
+<li>Sample text</li>
+</ul>
+</p>
+
+<ch_title>Sample title</ch_title>
+<p>Sample text</p>
+<figure width="691" height="215" image="changes/2.10/18_https_test_script_recorder.png"></figure>
+ -->
+
+<!-- =================== Incompatible changes =================== -->
+
+<ch_section>Incompatible changes</ch_section>
+
+<ul>
+</ul>
+
+<!-- =================== Improvements =================== -->
+
+<ch_section>Improvements</ch_section>
+
+<h3>HTTP Samplers and Test Script Recorder</h3>
+<ul>
+    <li><bug>57696</bug>HTTP Request : Improve responseMessage when resource download fails. Contributed by Ubik Load Pack (support at ubikloadpack.com)</li>
+</ul>
+
+<h3>Other samplers</h3>
+<ul>
+    <li><bug>57928</bug>Add ability to define protocol (http/https) to AccessLogSampler GUI. Contributed by Jérémie Lesage (jeremie.lesage at jeci.fr)</li>
+</ul>
+
+<h3>Controllers</h3>
+<ul>
+</ul>
+
+<h3>Listeners</h3>
+<ul>
+</ul>
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+<ul>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+</ul>
+
+<h3>I18N</h3>
+<ul>
+</ul>
+
+<h3>General</h3>
+<ul>
+<li><bug>57913</bug>Automated backups of last saved JMX files. Contributed by Benoit Vatan (benoit.vatan at gmail.com)</li>
+<li><bug>57988</bug> Shortcuts (Ctrl+1 .. Ctrl+9) to quick add elements into test plan. Implemented by Andrey Pokhilko (andrey at blazemeter.com) and contributed by BlazeMeter Ltd.</li>
+</ul>
+<ch_section>Non-functional changes</ch_section>
+<ul>
+<li>Updated to tika-core and tika-parsers 1.8 (from 1.7)</li>
+<li>Updated to commons-math3 3.5 (from 3.4.1)</li>
+<li>Updated to commons-pool2 2.4.1 (from 2.3)</li>
+<li><bug>57981</bug>Require a minimum of Java 7.</li>
+</ul>
+ 
+ <!-- =================== Bug fixes =================== -->
+
+<ch_section>Bug fixes</ch_section>
+
+<h3>HTTP Samplers and Test Script Recorder</h3>
+<ul>
+    <li><bug>57806</bug>"audio/x-mpegurl" mime type is erroneously considered as binary by ViewResultsTree. Contributed by Ubik Load Pack (support at ubikloadpack.com)</li>
+    <li><bug>57858</bug>Don't call sampleEnd twice in HTTPHC4Impl when a RuntimeException or an IOException occurs in the sample method.</li>
+    <li><bug>57921</bug>HTTP/1.1 without keep-alive "Connection" response header no longer uses infinite keep-alive.</li>
+</ul>
+
+<h3>Other Samplers</h3>
+<ul>
+</ul>
+
+<h3>Controllers</h3>
+<ul>
+</ul>
+
+<h3>Listeners</h3>
+<ul>
+</ul>
+
+<h3>Timers, Assertions, Config, Pre- &amp; Post-Processors</h3>
+<ul>
+</ul>
+
+<h3>Functions</h3>
+<ul>
+<li><bug>57825</bug>__Random function fails if min value is equal to max value (regression related to <bugzilla>54453</bugzilla>)</li>
+</ul>
+
+<h3>I18N</h3>
+<ul>
+</ul>
+
+<h3>General</h3>
+<ul>
+    <li><bug>54826</bug>Don't fail on long strings in JSON responses when displaying them as JSON in View Results Tree.</li>
+    <li><bug>57734</bug>Maven transient dependencies are incorrect for 2.13</li>
+    <li><bug>57821</bug>Command-line option "-X --remoteexit" doesn't work since 2.13 (regression related to <bugzilla>57500</bugzilla>)</li>
+    <li><bug>57731</bug>TESTSTART.MS has always the value of the first Test started in Server mode in NON GUI Distributed testing</li>
+</ul>
+
+ <!--  =================== Thanks =================== -->
+
+<ch_section>Thanks</ch_section>
+<p>We thank all contributors mentioned in bug and improvement sections above:
+<ul>
+<li><a href="http://ubikloadpack.com">Ubik Load Pack</a></li>
+<li>Benoit Vatan (benoit.vatan at gmail.com)</li>
+<li>Jérémie Lesage (jeremie.lesage at jeci.fr)</li>
+</ul>
+
+<br/>
+We also thank bug reporters who helped us improve JMeter. <br/>
+For this release we want to give special thanks to the following reporters for the clear reports and tests made after our fixes:
+<ul>
+</ul>
+
+Apologies if we have omitted anyone else.
+ </p>
+ <!--  =================== Known bugs =================== -->
+ 
+<ch_section>Known bugs</ch_section>
+
+<ul>
+<li>The Once Only controller behaves correctly under a Thread Group or Loop Controller,
+but otherwise its behaviour is not consistent (or clearly specified).</li>
+
+<li>
+The numbers that appear to the left of the green box are the number of active threads / total number of threads, 
+the total number of threads only applies to a locally run test, otherwise it will show 0 (see <bugzilla>55510</bugzilla>).
+</li>
+
+<li>
+Note that there is a <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6396599 ">bug in Java</a>
+on some Linux systems that manifests itself as the following error when running the test cases or JMeter itself:
+<pre>
+ [java] WARNING: Couldn't flush user prefs:
+ java.util.prefs.BackingStoreException:
+ java.lang.IllegalArgumentException: Not supported: indent-number
+</pre>
+This does not affect JMeter operation. This issue is fixed since Java 7b05.
+</li>
+
+<li>
+Note that under some windows systems you may have this WARNING:
+<pre>
+java.util.prefs.WindowsPreferences 
+WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0
+x80000002. Windows RegCreateKeyEx(...) returned error code 5.
+</pre>
+The fix is to run JMeter as Administrator, it will create the registry key for you, then you can restart JMeter as a normal user and you won't have the warning anymore.
+</li>
+
+<li>
+With Java 1.6 and Gnome 3 on Linux systems, the JMeter menu may not work correctly (shift between mouse's click and the menu). 
+This is a known Java bug (see  <bugzilla>54477</bugzilla>). 
+A workaround is to use a Java 7 runtime (OpenJDK or Oracle JDK).
+</li>
+
+<li>
+With Oracle Java 7 and Mac Book Pro Retina Display, the JMeter GUI may look blurry. 
+This is a known Java bug, see Bug <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=8000629" >JDK-8000629</a>.
+A workaround is to use a Java 7 update 40 runtime which fixes this issue.
+</li>
+
+<li>
+You may encounter the following error: <i>java.security.cert.CertificateException: Certificates does not conform to algorithm constraints</i>
+ if you run a HTTPS request on a web site with a SSL certificate (itself or one of SSL certificates in its chain of trust) with a signature
+ algorithm using MD2 (like md2WithRSAEncryption) or with a SSL certificate with a size lower than 1024 bits.
+This error is related to increased security in Java 7 version u16 (MD2) and version u40 (Certificate size lower than 1024 bits), and Java 8 too.
+<br></br>
+To allow you to perform your HTTPS request, you can downgrade the security of your Java installation by editing 
+the Java <b>jdk.certpath.disabledAlgorithms</b> property. Remove the MD2 value or the constraint on size, depending on your case.
+<br></br>
+This property is in this file:
+<pre>JAVA_HOME/jre/lib/security/java.security</pre>
+See  <bugzilla>56357</bugzilla> for details.
+</li>
+
+</ul>
+ 
+</section> 
+</body> 
+</document>
